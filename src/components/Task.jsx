@@ -7,9 +7,10 @@ export const Task = ({ checkBox, edit, id, value }) => {
     React.useContext(Context);
 
   const editValueInput = (id, valueTask) => {
-    setValueInputEdit(valueTask);
-    editTaskValue(id, valueInputEdit);
-    // editTaskCheck(id);
+    if (valueTask !== "") {
+      setValueInputEdit(valueTask);
+      editTaskValue(id, valueInputEdit);
+    }
   };
 
   const clickEnter = (e) => {
@@ -44,7 +45,10 @@ export const Task = ({ checkBox, edit, id, value }) => {
       <div className="task__btns">
         {edit ? (
           <div className="btns__edit">
-            <button onClick={() => editValueInput(id)} className="btn__save">
+            <button
+              onClick={() => editValueInput(id, valueInputEdit)}
+              className="btn__save"
+            >
               save
             </button>
             <button onClick={() => editTaskCheck(id)} className="btn__edit">
