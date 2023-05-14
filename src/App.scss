@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+* {
+  margin: 0;
+  font-size: 22px;
+}
+body {
+  background: #0b2447;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background: #19376d;
+  margin: auto;
+  margin-top: 5%;
+  padding: 5%;
+  border-radius: 35px;
+}
+
+.input__block {
+  display: flex;
+  background: #0b2447;
+  border-radius: 10px;
+  &:hover {
+    outline: 1px solid #a5d7e8;
+  }
+  .input {
+    background: #576cbc;
+    padding: 4%;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #fff;
+    width: 100%;
+    &:focus {
+      outline: none;
+      outline: 1px solid #a5d7e8;
+    }
+    &[type="text"]::placeholder {
+      color: #fff;
+    }
+  }
+  .add__icon {
+    width: 48px;
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+}
+.tasks__block {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 340px;
+  overflow-y: scroll;
+  .task {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    justify-content: space-between;
+    .task__block {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      // &:hover {
+      //   text-decoration: underline;
+      // }
+      h3 {
+        margin-left: 10px;
+
+        &.do {
+          text-decoration: line-through;
+        }
+      }
+      .inputEdit {
+        background: #19376d;
+        border: none;
+        border-bottom: 1px solid #576cbc;
+        margin-left: 10px;
+        color: #fff;
+        width: 100%;
+        &:hover {
+          text-decoration: none;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+.task__btns {
+  display: flex;
+  margin-left: 15px;
+  .editBtn {
+    width: 30px;
+    font-size: 25px;
+    margin-right: 5px;
+  }
+  .btns__edit {
+    display: flex;
+    button {
+      background: #19376d;
+      margin-right: 8px;
+      border: 1px solid #576cbc;
+      border-radius: 5px;
+      color: #fff;
+    }
+  }
+  .editBtn,
+  .delBtn {
+    cursor: pointer;
+  }
+}
